@@ -1,0 +1,11 @@
+{
+  "extensions.ignoreRecommendations": false,
+  "eslint.packageManager": "yarn",
+  "eslint.workingDirectories": [
+    { "directory": "./app", "changeProcessCWD": true }
+  ],
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}
