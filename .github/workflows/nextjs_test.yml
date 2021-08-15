@@ -20,7 +20,10 @@ jobs:
           ${{ runner.os }}-node-
     - name: yarn install
       run: yarn
+      working-directory: ./app
     - name: typecheck
       run: yarn typecheck
+      working-directory: ./app
     - name: lint
       run: yarn lint
+      working-directory: ./app
