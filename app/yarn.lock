@@ -3378,7 +3378,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zengin-code@^1.0.0-p20210726:
-  version "1.0.0-p20210726"
-  resolved "https://registry.yarnpkg.com/zengin-code/-/zengin-code-1.0.0-p20210726.tgz#2b23b71981aacc1a3be5a3badc5c84d3100cd7c5"
-  integrity sha512-G+wUkqGJF92tRPDF2PkhZ50cRSAYyFaoC0BrkmnRlYxGUqWJlNSEZ7+ysE2UsP8NxiYDXVQ1yWCh0mIsqOaI2w==
+zengin-code@latest:
+  version "1.0.0-p20210809"
+  resolved "https://registry.yarnpkg.com/zengin-code/-/zengin-code-1.0.0-p20210809.tgz#f9898dc1670c0c93acf037317f3a6cd70f4f7532"
+  integrity sha512-a7le0N/zbmGAGO1yzVJTupS8bW1i/Vqd8NhIVhGYHo+P2/NdWCcofD3M8bhl0Sy3hhzAywatJ/4E/4DHTYUaPA==
