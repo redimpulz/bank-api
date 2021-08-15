@@ -9,5 +9,9 @@ module.exports = {
         patterns: ['../'],
       },
     ],
+    'import/no-anonymous-default-export': [
+      'error',
+      { allowArrowFunction: true },
+    ],
   },
 }
