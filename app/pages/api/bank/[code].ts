@@ -2,7 +2,7 @@ import handler from '@/server/api/handler'
 import zenginCode from 'zengin-code'
 
 export default handler().get((req, res) => {
-  const code = req.query.code.toString()
+  const code = req.query.code?.toString() ?? ''
 
   const codes = Object.keys(zenginCode)
   if (!codes.includes(code)) {
