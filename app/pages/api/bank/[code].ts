@@ -1,29 +1,36 @@
-import handler from '@/server/api/handler'
 import zenginCode from 'zengin-code'
+import httpStatus from 'http-status-codes'
+import { router, handlerOptions, nextResponseJson } from '@/server/api/edge'
 
-export default handler().get((req, res) => {
-  const code = req.query.code?.toString() ?? ''
+export const config = {
+  runtime: 'edge',
+}
 
-  const codes = Object.keys(zenginCode)
-  if (!codes.includes(code)) {
-    res.status(400).end()
-    return
-  }
-
-  const bank = zenginCode[code]
-  const data = {
-    code: bank.code,
-    name: bank.name,
-    kana: bank.kana,
-    hira: bank.hira,
-    roma: bank.roma,
-    branches: Object.entries(bank.branches).map(([, value]) => ({
-      code: value.code,
-      name: value.name,
-      kana: value.kana,
-      hira: value.hira,
-      roma: value.roma,
-    })),
-  }
-  res.json(data)
-})
+export default router
+  .get((req) => {
+    const params = new URL(req.url).searchParams
+    const code = params.get('code') ?? ''
+    const codes = Object.keys(zenginCode)
+    if (!codes.includes(code)) {
+      return nextResponseJson(req)('Not Found', {
+        status: httpStatus.NOT_FOUND,
+      })
+    }
+    const bank = zenginCode[code]
+    const data = {
+      code: bank.code,
+      name: bank.name,
+      kana: bank.kana,
+      hira: bank.hira,
+      roma: bank.roma,
+      branches: Object.entries(bank.branches).map(([, value]) => ({
+        code: value.code,
+        name: value.name,
+        kana: value.kana,
+        hira: value.hira,
+        roma: value.roma,
+      })),
+    }
+    return nextResponseJson(req)(data)
+  })
+  .handler(handlerOptions)
